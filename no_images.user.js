@@ -1,13 +1,16 @@
 // ==UserScript==
 // @id             no_images
 // @name           Disable all images on the page
-// @version        1.0
+// @version        1.1
 // @namespace      junkblocker
 // @author         Manpreet Singh <junkblocker@yahoo.com>
 // @description    Disable all images on the page if noimages or blockimages is in url params
 // @include        http://*
 // @include        https://*
-// @grant          none
+// @grant          GM_registerMenuCommand
+// @grant          GM_deleteValue
+// @grant          GM_getValue
+// @grant          GM_setValue
 // @run-at         document-start
 // ==/UserScript==
 
@@ -16,8 +19,6 @@ try {
 } catch (safe_wrap_top) {}
 try {
     (function() {
-        var block_images = (/[#?;&](no|block)[_-]?images?/i).test(document.location.href);
-
         // *************************
         // getStyle
         //
@@ -78,6 +79,31 @@ try {
         function hideImagesCallback(e) {
             hideImages(e.target);
         }
+
+        var registerMenuCommand = typeof GM_registerMenuCommand !== 'undefined' ? GM_registerMenuCommand : function() {};
+
+        var siteBlocked = GM_getValue(window.location.host);
+
+        if (!siteBlocked) {
+            // Registers the configuration menu command
+            registerMenuCommand("Block this site", blockSite, null, null, "B");
+        } else {
+            registerMenuCommand("Unblock this site", unblockSite, null, null, "B");
+        }
+
+        function blockSite() {
+            try {
+                GM_setValue(window.location.host, 1)
+            } catch (e) {}
+        }
+
+        function unblockSite() {
+            try {
+                GM_deleteValue(window.location.host);
+            } catch (e) {}
+        }
+
+        var block_images = (/[#?;&](no|block)[_-]?images?/i).test(window.location.href) || siteBlocked;
 
         if (block_images) {
             var mo = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
