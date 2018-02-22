@@ -1,7 +1,7 @@
 // ==UserScript==
 // @id             Duckduckgo
 // @name           Duckduckgo search enhancements
-// @version        1.0
+// @version        1.1
 // @namespace      junkblocker
 // @author         Manpreet Singh <junkblocker@yahoo.com>
 // @description    Add other search engines to Duckduckgo Interface and does fallback to github on no search results
@@ -94,6 +94,7 @@ try {
         function makeButton(label, querys) {
             var button = document.createElement('button');
             button.id = 'my_' + label;
+            button.className = 'btn';
             button.textContent = label;
             addEventHandler(button, "click", function() {
                 window.location.replace(querys);
@@ -104,9 +105,9 @@ try {
 
         function makeLink(label, querys) {
             var li = document.createElement('li');
-            li.className = 'zcm__item';
+            li.style.display = 'inline-block';
             var a = document.createElement('a');
-            a.className = 'zcm__link';
+            a.className = 'btn';
             a.href = querys;
             a.setAttribute('data-zci-link', 'whatever');
             a.innerHTML = label;
