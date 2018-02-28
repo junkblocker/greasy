@@ -1,7 +1,7 @@
 // ==UserScript==
 // @id             no_images
 // @name           Disable all images on the page
-// @version        1.1
+// @version        1.2
 // @namespace      junkblocker
 // @author         Manpreet Singh <junkblocker@yahoo.com>
 // @description    Disable all images on the page if noimages or blockimages is in url params
@@ -37,15 +37,17 @@ try {
             return strValue;
         };
 
-        function hideImage(img) {
+        function hideImage(elem) {
             try {
-                img.style.display = 'none';
+                if (elem.nodeName.toLowerCase() == 'img') {
+                    elem.style.display = 'none';
+                }
+                try {
+                    elem.setAttribute('src', '');
+                } catch (x2) {}
             } catch (x1) {}
             try {
-                img.setAttribute('src', '');
-            } catch (x2) {}
-            try {
-                img.style.backgroundImage = 'none';
+                elem.style.backgroundImage = 'none';
             } catch (x3) {}
         }
 
@@ -93,7 +95,7 @@ try {
 
         function blockSite() {
             try {
-                GM_setValue(window.location.host, 1)
+                GM_setValue(window.location.host, 1);
             } catch (e) {}
         }
 
