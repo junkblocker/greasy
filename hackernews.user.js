@@ -1,15 +1,14 @@
 // ==UserScript==
 // @id             hacker_news
 // @name           Hacker News Site Improvements
-// @version        1.0
+// @version        1.2
 // @namespace      junkblocker
 // @author         Manpreet Singh <junkblocker@yahoo.com>
 // @description    Hacker News Site Improvements
 // @include        http://hackerne.ws
 // @include        http://hackerne.ws/
 // @include        http://hackerne.ws/*
-// @include        http://news.ycombinator.com/*
-// @include        https://news.ycombinator.com/*
+// @include        *://news.ycombinator.tld/*
 // @license        MIT
 // @require        http://code.jquery.com/jquery-1.11.2.js
 // @require        https://raw.githubusercontent.com/eligrey/FileSaver.js/master/FileSaver.min.js
@@ -1052,7 +1051,7 @@ try {
                 return false;
             });
             link.click(function(event) {
-                drop.event();
+                drop(event);
                 try {
                     var parental_unit = event.target.id.replace(/^a_/, '');
                     scrollToElement(document.getElementById(parental_unit));

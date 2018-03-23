@@ -3,23 +3,15 @@
 // @name        Wiki Auto Login
 // @namespace   junkblocker
 // @description Logs you into Wikipedia universe wikis automatically. You can't stay logged out.
-// @include     http://*.wikibooks.org/*
-// @include     http://*.wikidata.org/*
-// @include     http://*.wikinews.org/*
-// @include     http://*.wikipedia.org/*
-// @include     http://*.wikiquote.org/*
-// @include     http://*.wikisource.org/*
-// @include     http://*.wikiversity.org/*
-// @include     http://*.wikivoyage.org/*
-// @include     https://*.wikibooks.org/*
-// @include     https://*.wikidata.org/*
-// @include     https://*.wikinews.org/*
-// @include     https://*.wikipedia.org/*
-// @include     https://*.wikiquote.org/*
-// @include     https://*.wikisource.org/*
-// @include     https://*.wikiversity.org/*
-// @include     https://*.wikivoyage.org/*
-// @version     1.0
+// @include     *://*.wikibooks.tld/*
+// @include     *://*.wikidata.tld/*
+// @include     *://*.wikinews.tld/*
+// @include     *://*.wikipedia.tld/*
+// @include     *://*.wikiquote.tld/*
+// @include     *://*.wikisource.tld/*
+// @include     *://*.wikiversity.tld/*
+// @include     *://*.wikivoyage.tld/*
+// @version     1.1
 // @grant       GM_getValue
 // @grant       GM_setValue
 // @run-at      document-end

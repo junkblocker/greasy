@@ -1,16 +1,16 @@
 // ==UserScript==
 // @id             Ixquick
 // @name           Ixquick search enhancements
-// @version        1.0
+// @version        1.1
 // @namespace      junkblocker
 // @author         Manpreet Singh <junkblocker@yahoo.com>
 // @description    Add other search engines to Ixquick Interface and does fallback to startpage on no search results
-// @include        https://ixquick.com/
-// @include        https://ixquick.com/do/search*
-// @include        https://ixquick.com/do/asearch*
-// @include        https://*.ixquick.com/do/search*
-// @include        https://*.ixquick.com/do/asearch*
-// @include        https://ixquick.com/do/metasearch.pl
+// @include        https://ixquick.tld/
+// @include        https://ixquick.tld/do/search*
+// @include        https://ixquick.tld/do/asearch*
+// @include        https://*.ixquick.tld/do/search*
+// @include        https://*.ixquick.tld/do/asearch*
+// @include        https://ixquick.tld/do/metasearch.pl
 // @grant          none
 // @run-at         document-end
 // ==/UserScript==

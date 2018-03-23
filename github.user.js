@@ -4,9 +4,9 @@
 // @namespace   junkblocker
 // @author         Manpreet Singh <junkblocker@yahoo.com>
 // @description GitHub Enhancements
-// @include     https://github.com/*
-// @match       https://github.com/*
-// @version     1.0
+// @include     https://github.tld/*
+// @match       https://github.tld/*
+// @version     1.1
 // @grant       none
 // @run-at      document-end
 // ==/UserScript==
@@ -19,11 +19,11 @@ try {
     (function() {
 
         var container = document.getElementsByClassName('container');
-        for (var i = 0, l = container.length; i <l ; i++) {
+        for (var i = 0, l = container.length; i < l; i++) {
             container[i].style.width = '95%';
         }
 
-        if (!(/^https:\/\/(gist\.)?github\.com\/([^\/]+\/[^\/]+\/)?search/).test(document.location.href)) return;
+        if (!(/^https:\/\/(gist\.)?github\.[a-z0-9.]+\/([^\/]+\/[^\/]+\/)?search/).test(document.location.href)) return;
 
         var addEventHandler = typeof addEventHandler !== 'undefined' ? addEventHandler : function(target, eventName, eventHandler, scope) {
             var f = scope ? function() {

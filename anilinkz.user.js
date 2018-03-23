@@ -1,12 +1,11 @@
 // ==UserScript==
 // @id             anilinkz
 // @name           anilinkz fixup
-// @version        1.0
+// @version        1.1
 // @namespace      junkblocker
 // @author         Manpreet Singh <junkblocker@yahoo.com>
 // @description    anilinkz.com fixup
-// @include        http://anilinkz.com/*
-// @include        http://anilinkz.to/*
+// @include        http://anilinkz.tld/*
 // @grant          GM_addStyle
 // @run-at         document-end
 // ==/UserScript==
@@ -53,12 +52,13 @@ try {
                 'v44': 9, // fast
 
                 'PlayP': 6, // Flash Only :(
+                'PlayP2': 6, // Flash Only :(
                 'Daily': 6,
                 'gDrive': 5,
                 'Pbb': 4,
                 'ArkVid': 5, // slow
                 'Nova': 5,
-                'vZoo': 4,   // Pause control broken
+                'vZoo': 4, // Pause control broken
                 'eStream': 1,
                 'yUp': 0,
                 'AuEn2': -1,

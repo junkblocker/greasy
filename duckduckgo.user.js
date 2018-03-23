@@ -1,11 +1,11 @@
 // ==UserScript==
 // @id             Duckduckgo
 // @name           Duckduckgo search enhancements
-// @version        1.1
+// @version        1.2
 // @namespace      junkblocker
 // @author         Manpreet Singh <junkblocker@yahoo.com>
 // @description    Add other search engines to Duckduckgo Interface and does fallback to github on no search results
-// @include        https://duckduckgo.com/*
+// @include        https://duckduckgo.tld/*
 // @grant          none
 // @run-at         document-end
 // ==/UserScript==

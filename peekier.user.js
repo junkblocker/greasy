@@ -1,11 +1,11 @@
 // ==UserScript==
 // @id             Peekier
 // @name           Peekier search enhancements
-// @version        1.0
+// @version        1.1
 // @namespace      junkblocker
 // @author         Manpreet Singh <junkblocker@yahoo.com>
 // @description    Add other search engines to Peekier Interface and does fallback to google on no search results
-// @include        https://peekier.com/
+// @include        https://peekier.tld/
 // @grant          none
 // @run-at         document-end
 // ==/UserScript==

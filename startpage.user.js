@@ -1,14 +1,12 @@
 // ==UserScript==
 // @id             Startpage
 // @name           Startpage search enhancements
-// @version        1.0
+// @version        1.1
 // @namespace      junkblocker
 // @author         Manpreet Singh <junkblocker@yahoo.com>
 // @description    Add other search engines to Startpage Interface and does fallback to duckduckgo on no search results
-// @include        https://startpage.com/
-// @include        https://startpage.com/*
-// @include        https://*.startpage.com/
-// @include        https://*.startpage.com/*
+// @include        *://startpage.tld/*
+// @include        *://*.startpage.tld/*
 // @grant          none
 // @run-at         document-end
 // ==/UserScript==
@@ -51,7 +49,7 @@ try {
                 } catch (ex) {
                     console.log(ex);
                 }
-                interval = interval < 5000? interval + 500: 5000;
+                interval = interval < 5000 ? interval + 500 : 5000;
             }
             setTimeout(killAds, interval);
         }

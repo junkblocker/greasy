@@ -1,20 +1,14 @@
 // ==UserScript==
 // @id             reddit
 // @name           Reddit Improvements
-// @version        1.0
+// @version        1.1
 // @namespace      junkblocker
 // @author         Manpreet Singh <junkblocker@yahoo.com>
 // @description    Miscellaneous Reddit Improvements
-// @include        http://reddit.com/
-// @include        http://reddit.com/*
-// @include        http://*.reddit.com/
-// @include        http://*.reddit.com/*
-// @include        https://reddit.com/
-// @include        https://reddit.com/*
-// @include        https://*.reddit.com/
-// @include        https://*.reddit.com/*
-// @include        https://pay.reddit.com/
-// @include        https://pay.reddit.com/*
+// @include        *://*.reddit.tld/*
+// @include        *://pay.reddit.tld/
+// @include        *://pay.reddit.tld/*
+// @include        *://reddit.tld/*
 // @require        http://code.jquery.com/jquery-1.11.2.js
 // @grant          GM_log
 // @grant          GM_registerMenuCommand
@@ -44,8 +38,8 @@ try {
 
             if ((mode || !$.support.boxModel)) { // IE, Gecko
                 height = (mode == 'CSS1Compat') ?
-                document.documentElement.clientHeight : // Standards
-                document.body.clientHeight; // Quirks
+                    document.documentElement.clientHeight : // Standards
+                    document.body.clientHeight; // Quirks
             }
 
             return height;
@@ -1521,7 +1515,7 @@ try {
                         },
                         onerror: function(response) {
                             if (response.status === 503 && tried < 12)
-                            // Service not available, retry every 5 seconds
+                                // Service not available, retry every 5 seconds
                                 window.setTimeout(Subscription.retrieveSubscriptions, 5000, doc, after, tried + 1);
                         }
                     });

@@ -1,11 +1,11 @@
 // ==UserScript==
 // @id             Remove getpocket.com recommendation spam
 // @name           Remove getpocket.com recommendation spam
-// @version        1.0
+// @version        1.1
 // @namespace      junkblocker
 // @author         Manpreet Singh <junkblocker@yahoo.com>
 // @description    Remove getpocket.com recommendation spam
-// @include        https://getpocket.com/a/recommended/*
+// @include        https://getpocket.tld/a/recommended/*
 // @grant          GM_getValue
 // @grant          GM_setValue
 // @run-at         document-end
@@ -19,7 +19,7 @@ try {
 try {
     // Copyright (c) 2016-2018, Manpreet Singh <junkblocker@yahoo.com>
     (function() {
-        if (!(/https:\/\/getpocket\.com\/(a\/(queue|recommended)|explore)\b/).test(document.location.href)) return;
+        if (!(/https:\/\/getpocket\.[a-z0-9.]+\/(a\/(queue|recommended)|explore)\b/).test(document.location.href)) return;
 
         var interval = 100;
 

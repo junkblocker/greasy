@@ -3,15 +3,15 @@
 // @namespace      junkblocker
 // @description    Show "What links here" in MediaWiki based wiki Page
 // @author         Manpreet Singh <junkblocker@yahoo.com>
-// @version        1.0
+// @version        1.1
 // @include        http://*.wiki*/*
 // @include        https://*.wiki*/*
 // @include        http://wiki.*/*
 // @include        https://wiki.*/*
 // @include        http://*/wiki/*
 // @include        https://*/wiki/*
-// @include        http://themodelfactory.org/*
-// @include        http://encyclopediadramatica.com/*
+// @include        http://themodelfactory.tld/*
+// @include        http://encyclopediadramatica.tld/*
 // @grant          GM_xmlhttpRequest
 // @run-at         document-end
 // ==/UserScript==
@@ -163,13 +163,13 @@ try {
 
         //var title;
         //document.body.classList.forEach(function(c) {
-            //if (/^page-/.test(c)) title = c.replace(/^page-/, '');
+        //if (/^page-/.test(c)) title = c.replace(/^page-/, '');
         //});
         //console.log(title);
 
         //var search_url = window.location.href.replace(/^(.+\/).*/, "$1") + 'Special:' + wlh + '/' + encodeURIComponent(title); // + "?limit=" + limit;
         var search_url = document.evaluate('.//li[@id="t-whatlinkshere"]/a', document.body, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-        if (! search_url) return;
+        if (!search_url) return;
         search_url = search_url.href;
 
         function waiting_img() {
@@ -259,7 +259,6 @@ try {
                             resolve_navi('next'); // next
                         };
 
-
                         setNavigation();
                         var non_meta = false;
                         $xp('.//li/a', ul_result.singleNodeValue).forEach(function(link) {
@@ -279,7 +278,7 @@ try {
                                 li.appendChild(wlh_this);
                             }
                         });
-                        if (! non_meta) {
+                        if (!non_meta) {
                             var li = document.createElement('li');
                             li.appendChild(document.createTextNode('(meta)'));
                             navi_div.appendChild(li);
