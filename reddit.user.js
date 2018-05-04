@@ -1,7 +1,7 @@
 // ==UserScript==
 // @id             reddit
 // @name           Reddit Improvements
-// @version        1.1
+// @version        1.2
 // @namespace      junkblocker
 // @author         Manpreet Singh <junkblocker@yahoo.com>
 // @description    Miscellaneous Reddit Improvements
@@ -30,7 +30,11 @@ try {
     // Copyright (c) 2006-2014, Manpreet Singh <junkblocker@yahoo.com>
     // Based on a bunch of scripts
     (function() {
-        if (/nodotjs/.test(document.location.href)) return;
+        if (window.location.host == 'www.reddit.com') {
+            var url = window.location.href.replace(/www\.reddit\.com/, 'old.reddit.com');
+            window.location.replace(url);
+            return;
+        }
 
         function getViewportHeight() {
             var height = window.innerHeight; // Safari, Opera
