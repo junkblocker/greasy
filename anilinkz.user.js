@@ -1,7 +1,7 @@
 // ==UserScript==
 // @id             anilinkz
 // @name           anilinkz fixup
-// @version        1.1
+// @version        1.2
 // @namespace      junkblocker
 // @author         Manpreet Singh <junkblocker@yahoo.com>
 // @description    anilinkz.com fixup
@@ -51,6 +51,7 @@ try {
                 'AuEn': 9, // Can't start at arbitrary position
                 'v44': 9, // fast
 
+                'eStream': 7, // seekable, fast
                 'PlayP': 6, // Flash Only :(
                 'PlayP2': 6, // Flash Only :(
                 'Daily': 6,
@@ -59,7 +60,6 @@ try {
                 'ArkVid': 5, // slow
                 'Nova': 5,
                 'vZoo': 4, // Pause control broken
-                'eStream': 1,
                 'yUp': 0,
                 'AuEn2': -1,
                 'oLoad': -1,
