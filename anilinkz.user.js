@@ -1,11 +1,11 @@
 // ==UserScript==
 // @id             anilinkz
 // @name           anilinkz fixup
-// @version        1.2
+// @version        1.3
 // @namespace      junkblocker
 // @author         Manpreet Singh <junkblocker@yahoo.com>
 // @description    anilinkz.com fixup
-// @include        http://anilinkz.tld/*
+// @include        *://anilinkz.tld/*
 // @grant          GM_addStyle
 // @run-at         document-end
 // ==/UserScript==
@@ -48,6 +48,7 @@ try {
                 'UpCr4': 10,
                 'VidCr2': 10,
                 'VidCr4': 10,
+                '4up': 10,
                 'AuEn': 9, // Can't start at arbitrary position
                 'v44': 9, // fast
 
@@ -68,7 +69,6 @@ try {
 
                 // Not working with uBlock origin anymore
                 'Baka': -1,
-                '4up': -1,
             },
 
             score: function(src_name) {
